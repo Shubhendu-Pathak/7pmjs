@@ -1,36 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        border: 10px solid red;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rebeccapurple;
+        background-image: url("https://images.unsplash.com/photo-1691438942138-7f78776a7105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8aVVJc25WdGpCMFl8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+      }
+      .form-box {
+        border: 8px solid blue;
+        border-radius: 20px;
+        width: 400px;
+        height: 450px;
+        /* background-color:white; */
+        /* background: white; */
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+      }
+      h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 8px;
+      }
+      .inputbox {
+        /* border: 2px solid white; */
+        /* background-color:rgba(224, 244, 248, 0.754); */
 
-        .container{
-            /* border: 5px solid red; */
-            height: 90vh;
-            width: 80vw;
-            clip-path: polygon(75% 0%, 100% 50%, 100% 98%, 0% 100%, 0 50%, 0% 0%);
+        margin: 20px 10px;
+        padding: 0px 0px 5px 40px;
+        width: 300px;
+        /* height: 40px; */
+        border-bottom: 2px solid rgb(74, 245, 6);
+        position: relative;
+        box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2pxffffff73;
+        /* border-radius: 25px; */
+      }
 
-background-color: yellow;
-background-image: url(https://images.unsplash.com/photo-1682685795463-0674c065f315?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60);
-background-repeat: no-repeat;
-background-position: center;
-background-size: 100% 100%;
-
-        }
+      .inputbox label {
+        position: absolute;
+        top: 50%;
+        left: 45px;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: yellow;
+      }
+      .inputbox input {
+        width: 100%;
+        height: 50px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        padding: 0 50px 0 8px;
+        color: white;
+      }
+      i {
+        position: absolute;
+        top: 40%;
+        left: 5px;
+        color: white;
+      }
+      input:focus ~ label {
+        top:-2px;
+        /* position:absolute; */
+        /* opacity: 0px; */
+      }
+      /* .field input:valid~label{
+        position:relative
+      } */
+      .forget {
+        text-align: left;
+        margin: 10px 0;
+      }
+      .forget a {
+        color: white;
+        font-family: "Popins", sans-serif;
+        text-decoration: none;
+      }
+      .forget:hover a {
+        text-decoration: underline;
+      }
+      .field {
+        border: 2px solid rgb(244, 127, 127);
+        background: #3498db;
+        margin: 20px 10px;
+        padding: 10px;
+        width: 300px;
+        box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2pxffffff73;
+        border-radius: 25px;
+      }
+      .fied[type="submit"] {
+        background: #3498db;
+        border: 1px solid #2691d9;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      field:hover {
+        background: 2691d9;
+      }
+      .register {
+        text-align: right;
+        margin: 10px 0;
+        color: white;
+      }
+      .register a{
+        color:orchid
+      }
     </style>
-</head>
-<body>
-
-<div class="container">
-
-</div>
-
-</body>
+  </head>
+  <body>
+    <section>
+      <div class="form-box">
+        <form action="">
+          <h2>Login</h2>
+          <div class="inputbox">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="text" name="" required id="" />
+            <label for="">Email</label>
+          </div>
+          <div class="inputbox">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" name="" required id="" />
+            <label for="">Password</label>
+          </div>
+          <div class="forget">
+              <label for="">
+              <a href="#">Forget Password</a>
+              <!-- <input type="checkbox" name="" id="" />Remember Me</label> -->
+          </div>
+          <div>
+            <button class="field" type="submit" value="LOGIN">LOGIN</button>
+          </div>
+          
+          <div class="register">
+            <p>
+              NEW CUSTOMER ?
+              <a href="#">Sign Up</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
 </html>
