@@ -229,5 +229,3 @@ document.write('<br/>')
 
 }
 
-loops basics
-
