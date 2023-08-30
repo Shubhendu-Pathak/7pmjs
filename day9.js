@@ -87,6 +87,14 @@
 
 //13// num is multiple of 3 or 7 or both  hint(use remainder operator)
 
+function one(num){
+console.log(num);
+
+
+}
+console.log( one(42) );
+
+
 //14 
 
 // function one(para){
@@ -165,17 +173,17 @@
 
 //23
 
-function one(para){
+// function one(para){
 
-    console.log(para);
-    let a = para.split(' ')
-    console.log(a);
-let txt 
-    for(let i=0;i<a.length;i++){
-        let b =  a[i][0].toUpperCase()  ;
-        console.log(b);
-        let c= a[i].slice(1)
-    }
+//     console.log(para);
+//     let a = para.split(' ')
+//     console.log(a);
+// let txt 
+//     for(let i=0;i<a.length;i++){
+//         let b =  a[i][0].toUpperCase()  ;
+//         console.log(b);
+//         let c= a[i].slice(1)
+//     }
 
-}
-console.log( one('tierry henry is a soccer player') );
+// }
+// console.log( one('tierry henry is a soccer player') );
