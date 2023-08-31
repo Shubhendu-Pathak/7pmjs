@@ -146,7 +146,7 @@
 // console.log(c);
 
 // \w = a-z  0-9  underscore
-let a = 'The five boxing $%^ wizards jump 55454 quickly'
-let b = /\w/ig
-let c = a.match(b)
-console.log(c);
+// let a = 'The five boxing $%^ wizards jump 55454 quickly'
+// let b = /\w/ig
+// let c = a.match(b)
+// console.log(c);
