@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- CSS only -->  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">   
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"   
+          crossorigin="anonymous">   
+    <title>dom</title> 
+</head> 
+<body> 
+     
+    
+    <div class="container">   
+        <div class="row">   
+          <div class="col s12">   
+            <div id="main" class="card">   
+              <div class="card-content">   
+                <span class="card-title">Task List</span>   
+                <div class="row">   
+                  <form id="task-form">   
+                    <div class="input-field col s12">   
+                      <input type="text" name="task" id="task" value="Walk the dog">   
+                      <label style="color: blue;" for="task">New Task</label>   
+                    </div>   
+                </div>   
+                <input type="submit" value="Add Task" class="btn">   
+                </form>   
+              </div>   
+              <div class="card-action">   
+                <h5 id="task-title">Tasks</h5>   
+                <ul class="collection">   
+                  <li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li><li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li><li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li>   
+                  <li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li>   
+                  <li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li>   
+                </ul>   
+                <button class="clear-tasks btn black" href="#">Clear Tasks</button>   
+              </div>   
+            </div>   
+          </div>   
+        </div>   
+      </div>   
+      <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>   
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>   
+
+
+      <script>
+
+// console.log(document);
+// console.log(typeof(document));
+// console.log(document.URL);
+// console.log(document.title);
+// console.log(document.all);
+// console.log(document.scripts);
+
+// let a = document.scripts
+// console.log(a);
+// console.log( [56,45,true] );
+// let b = Array.from(a)
+// console.log(b);
+
+//target elemnts
+//getelement by id = return element only
+// let a = document.getElementById('task-title')
+// console.log(a);
+// a.style.color='red'
+// a.style.fontSize='30px'
+// a.style.backgroundColor='aqua'
+
+//getelementbyClassname = html collection
+
+// let a = document.getElementsByClassName('delete-item')
+// console.log(a);
+
+// for(let c =0;c<a.length;c++){
+//     a[c].style.color='blue'
+// }
+
+//getelementbytagname = html collection
+
+// let a = document.getElementsByTagName('input')
+// console.log(a);
+
+//queryselector = elements only
+
+// let a = document.querySelector('.delete-item')
+// console.log(a);
+// a.style.fontSize='25px'
+
+//queryselectorAll = nodelist
+
+let a = document.querySelectorAll('.delete-item ')
+console.log(a);
+
+      </script>
+
+
+      </body>
+      </html>
