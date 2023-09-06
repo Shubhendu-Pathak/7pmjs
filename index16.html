@@ -1,0 +1,246 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- CSS only -->  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">   
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"   
+          crossorigin="anonymous">   
+    <title>dom</title> 
+</head> 
+<body> 
+     
+    
+    <div class="container">   
+        <div class="row">   
+          <div class="col s12">   
+            <div id="main" class="card">   
+              <div class="card-content">   
+                <span class="card-title">Task List</span>   
+                <div class="row">   
+                  <form id="task-form">   
+                    <div class="input-field col s12">   
+                      <input type="text" name="task" id="task" value="Walk the dog">   
+                      <label style="color: blue;" for="task">New Task</label>   
+                    </div>   
+                </div>   
+                <input type="submit" value="Add Task" class="btn">   
+                </form>   
+              </div>   
+              <div class="card-action">   
+                <h5 id="task-title" class="classtitle">Tasks</h5>   
+                <ul class="collection"><li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li><li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li><li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li><li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li>   
+                  <li class="collection-item">   
+                    List Item   
+                    <a href="#" class="delete-item secondary-content">   
+                      <i class="fa fa-remove"></i>   
+                    </a>   
+                  </li>   
+                </ul>   
+                <button class="clear-tasks btn black" href="#">Clear Tasks</button>   
+              </div>   
+            </div>   
+          </div>   
+        </div>   
+      </div>   
+      <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>   
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>   
+
+
+      <script>
+
+//getelemntbyid = element
+// let a = document.getElementById('task-title') ;
+// console.log(a);
+// //get things from element
+
+// console.log( a.id  );
+// console.log(a.className);
+
+// //styles
+// a.style.backgroundColor='black'
+// a.style.color='yellow'
+// a.style.textAlign='center'
+
+// //change the content
+// a.textContent='Changed Text'
+// a.innerText='Changed Again'
+// a.innerHTML='<span style="color:white">Inner Html</span>'
+
+//querySelector = return an element
+
+// let a = document.querySelector('h5')
+// let a = document.querySelector('.classtitle')
+// let a = document.querySelector('#task-title')
+// console.log(a);
+
+// let b = document.querySelector('li')
+// console.log(b);
+// b.style.color='red'
+
+// let b = document.querySelector('li:last-child')
+// let b = document.querySelector('li:first-child')
+// let b = document.querySelector('li:nth-child(4)')
+// console.log(b);
+// b.style.color='red'
+
+//Multipl Selections
+
+//getelementByClassName
+
+// let a = document.getElementsByClassName('collection-item')
+// console.log(a);
+// let b = Array.from(a)
+
+// b.forEach(element => {
+//     element.style.backgroundColor='pink'
+//     element.textContent='New One'
+// });
+
+// for(let i=0;i<b.length;i++){
+    // if(i % 2==1) continue
+    // b[i].style.color='red'
+// }
+
+//tagname
+
+// let a = document.getElementsByTagName('li')
+// console.log(a);
+
+//querySelectorALL
+// let a = document.querySelectorAll('.collection-item')
+// console.log(a);
+
+// let odd =  document.querySelectorAll('li,h5,button')
+// console.log(odd);
+
+// let b = document.querySelectorAll('#task-title')
+// let b = document.querySelectorAll('.clear-tasks,#task-title')
+// console.log(b);
+
+
+// 
+
+// let list = document.querySelector('ul.collection')
+// console.log(list);
+// let listitem = document.querySelector('li.collection-item:first-child')
+// console.log(listitem);
+
+// console.log( list.childNodes );
+// console.log( list.childNodes[0] );
+// console.log( list.childNodes[0].nodeName );
+// console.log( list.childNodes[0].nodeType );
+
+// 1 = Element
+//2=Attribute
+//3=TextNode
+//8=Comment
+//9=Doc Iteself
+// 10=Doctype
+
+//get Children of element nodes
+// console.log(list.children);
+// console.log(list.children[1].textContent='Third Li');
+
+//childeren of children
+// console.log(list.children[3].children[0].className='newanchorclass');
+// console.log(list.children[3].children[0]);
+
+// //parent node
+
+// console.log(listitem.parentNode);
+// console.log(listitem.parentElement);
+// console.log(listitem.parentElement.parentElement);
+
+//create ing Elemnt
+
+// const li = document.createElement('li')
+
+// //add class
+// li.className='newliclass'
+// //addid
+// li.id='new-li-id'
+// //add attribute
+// li.setAttribute('title','New Title')
+// //create a text node
+// // li.appendChild(document.createTextNode('Hello World'))
+// li.textContent='New List Item'
+// //Append li as child
+// let p = document.querySelector('ul')
+// console.log(p);
+// p.appendChild(li)
+
+
+// console.log(li);
+
+// console.log( document.getElementsByTagName('li') );
+// console.log( document.querySelectorAll('li') );
+
+//Replace Element
+
+// let newHead = document.createElement('h2')
+// //Add id
+// newHead.id='task-title'
+// //New Txt Node
+// newHead.appendChild(document.createTextNode('New Task List'))
+
+// //get old heading
+// let oldHead= document.querySelector('#task-title')
+// //parent
+// let ca = document.querySelector('.card-action')
+
+// //replace 
+// ca.replaceChild(newHead,oldHead)
+
+// console.log(newHead);
+
+
+//Class and Attributes
+// let li3= document.querySelector('li:nth-child(3)')
+// console.log(li3);
+
+//calss
+// li3.classList='classone'
+// li3.className='calsstwo'
+// li3.classList.add('extraclass')
+// li3.classList.remove('collection-item')
+
+let a = document.querySelector('li:first-child')
+console.log(a);
+
+let b = a.children[0]
+console.log(b);
+b.setAttribute('href','http://google.com')
+b.setAttribute('target','_blank')
+
+console.log( b.getAttribute('href') );
+
+b.removeAttribute('target')
+
+      </script>
+
+
+
+      </body>
+      </html>
