@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>InsertAdjacentHtml</h1>
+<hr>
+
+<button onclick="one()">Insert Element</button>
+
+<h1 id="txt">Orange</h1>
+
+<script>
+
+function one(){
+    const txt = document.querySelector('#txt')
+    let newEle = "<p>New Added item</p>"
+
+// txt.insertAdjacentHTML('afterend',newEle)
+// txt.insertAdjacentHTML('afterbegin',newEle)
+// txt.insertAdjacentHTML('beforeend',newEle)
+txt.insertAdjacentHTML('beforebegin',newEle)
+
+}
+
+
+</script>
+
+</body>
+</html>

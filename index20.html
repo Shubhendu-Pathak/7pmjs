@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="div1">
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quod aperiam iure tempore esse quasi debitis! Molestiae odio repellat minus!</p>
+    <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic consequatur perspiciatis ullam quasi cum tempore veritatis saepe, in quo quaerat?</p>
+</div>
+
+<script>
+
+const para = document.createElement('p')
+const node = document.createTextNode('new paragraph element added')
+para.appendChild(node)
+
+let a = document.querySelector('#div1')
+// at last
+// a.appendChild(para)
+
+//to add above p1
+// let b = document.getElementById('p1')
+// a.insertBefore(para,b)
+
+//to replace
+// target parent  = div1
+//element to be replaced with  = para
+// element which is to be replaced = p2
+
+let c = document.getElementById('p2')
+a.replaceChild(para,c)
+
+</script>
+
+</body>
+</html>

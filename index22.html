@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<input type="text" name="" id="inp">
+<button>+</button>
+
+<h1 id="txt"></h1>
+
+<script>
+
+// let h1 = document.getElementById('txt')
+let inp = document.getElementById('inp')
+console.log(inp);
+
+
+document.querySelector('button').addEventListener('click',()=>{
+    let a = document.createElement('h1')
+a.innerText = inp.value
+inp.value=''
+
+document.body.appendChild(a)
+
+})
+
+</script>
+
+</body>
+</html>

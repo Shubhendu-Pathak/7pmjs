@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        
+        }
+        .container{
+            border: 5px solid red;
+            display: flex;
+            width: 70vw;
+        }
+        .panel{
+            background-size: auto 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            flex: 0.5;
+            margin: 10px;
+            position: relative;
+            transition: flex 0.7s ease-in;
+        }
+        .panel h3{
+            font-size: 24px;
+            position: absolute;
+            bottom: 24px;
+            left: 60px;
+            margin: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .panel.active{
+            flex: 5;
+          
+        }
+.panel.active h3{
+    opacity: 1;
+    visibility: visible;
+    left: 140px;
+    transition: all 1s;
+}
+
+@media (max-width:480px){
+
+.container{
+    width: 100vw;
+}
+.panel:nth-of-type(4),.panel:nth-of-type(5){
+    display: none;
+}
+
+}
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1682685797703-2bb22dbb885b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60');">
+        <h3>Explore World</h3>
+    </div>
+    <div class="panel " style="background-image: url('https://images.unsplash.com/photo-1682685797703-2bb22dbb885b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60');">
+        <h3>Explore World</h3>
+    </div>
+    <div class="panel " style="background-image: url('https://images.unsplash.com/photo-1682685797703-2bb22dbb885b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60');">
+        <h3>Explore World</h3>
+    </div>
+    <div class="panel " style="background-image: url('https://images.unsplash.com/photo-1682685797703-2bb22dbb885b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60');">
+        <h3>Explore World</h3>
+    </div>
+    <div class="panel " style="background-image: url('https://images.unsplash.com/photo-1682685797703-2bb22dbb885b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60');">
+        <h3>Explore World</h3>
+    </div>
+        <div class="panel " style="background-image: url('https://images.unsplash.com/photo-1682685797703-2bb22dbb885b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60');">
+        <h3>Explore World</h3>
+    </div>
+    <div class="panel " style="background-image: url('https://images.unsplash.com/photo-1682685797703-2bb22dbb885b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60');">
+        <h3>Explore World</h3>
+    </div>
+
+    <div class="panel " style="background-image: url('https://images.unsplash.com/photo-1682685797703-2bb22dbb885b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60');">
+        <h3>Explore World</h3>
+    </div>
+</div>
+
+<script>
+
+const panels = document.querySelectorAll('.panel')
+console.log(panels);
+
+
+panels.forEach(panel=>{
+    panel.addEventListener('click',()=>{
+       removeactiveclass()
+        panel.classList.add('active')
+    })
+})
+
+
+
+function removeactiveclass(){
+    panels.forEach(panel=>{
+        panel.classList.remove('active')
+    })
+}
+
+</script>
+
+
+
+
+</body>
+</html>
