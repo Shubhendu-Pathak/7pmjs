@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: brown;
+            color: black;
+            /* overflow-x: hidden; */
+            margin: 0;
+            text-align: center;
+        }
+        .container{
+            background-color: wheat;
+            transform-origin: top left;
+            transition: all 1s linear;
+            width: 100vw;
+            min-height: 100vh;
+            padding: 50px;
+        }
+        .container.show-nav{
+            transform: rotate(-20deg);
+        }
+        .circle-container{
+            position: fixed;
+            top: -100px;
+            left: -100px;
+        }
+        .circle{
+            background-color: pink;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            position: relative;
+            transition: all 1s linear;
+        }
+        .circle button{
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            background: transparent;
+            border: 0;
+            font-size: 26px;
+            color: red;
+        }
+        .circle button#open{
+            left: 70%;
+        }
+        .circle button#close{
+            left: 80%;
+            top: 80%;
+            transform: rotate(90deg);
+            transform-origin: top left;
+        }
+        .content img{
+             max-width: 100%;
+        }
+        .content{
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        .content h1{
+            margin: 0;
+        }
+        .content small{
+            color: brown;
+            font-style: italic;
+
+        }
+        .content p{
+            color: gray;
+            line-height: 1.7;
+        }
+
+        nav{
+            position: fixed;
+            bottom: 95px;
+            left: 0;
+            z-index: -2;
+        }
+        nav ul{
+            /* border: 2px solid red; */
+            list-style: none;
+            padding-left: 20px;
+        }
+        nav ul li{
+            text-transform: uppercase;
+            color: white;
+            margin: 40px 0;
+            /* transform: translateX(-100%); */
+            transition: transform 1s ease-in-out;
+        }
+nav ul li i{
+    font-size: 24px;
+    margin-right: 15px;
+}
+nav ul li + li{
+    margin-left: 25px;
+}
+nav ul li + li + li {
+    margin-left: 75px;
+}
+    </style>
+</head>
+<body>
+    
+<div class="container show-nav">
+    <div class="circle-container">
+        <div class="circle">
+            <button id="close">
+                <i class="fas fa-times"></i>
+            </button>
+            <button id="open">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Amazing Article</h1>
+        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt porro quam illo enim earum autem, placeat dolores accusantium? Praesentium voluptates ipsam quo temporibus ad inventore vel provident suscipit quos magni labore rerum illum doloribus culpa quae a numquam incidunt similique vero nemo, exercitationem fugiat architecto explicabo porro! Reiciendis alias quas culpa aliquam aspernatur. Amet dolor rerum, perspiciatis modi nam, praesentium voluptatum sed cupiditate provident nemo, porro deserunt. Sapiente voluptatum consectetur quod natus ullam possimus assumenda maiores neque, quos iusto consequuntur doloremque sunt placeat itaque! Magnam ab quod molestiae delectus amet eum minus commodi, id, temporibus vel consequatur reiciendis consequuntur modi.</p>
+        <h3>My Dog</h3>
+        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=700&q=60" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit velit quod dolorum! Iste animi saepe unde soluta obcaecati? Quas excepturi, tempore libero eos aspernatur optio laudantium ea veritatis architecto sit dolorem, quasi iusto velit deserunt doloribus voluptate, recusandae exercitationem sed? Voluptate nihil laudantium molestiae ratione, praesentium veritatis molestias adipisci id, quod magnam explicabo et beatae ullam accusantium asperiores minima nemo cum neque odit quis. Doloribus facilis ex voluptatum eaque amet aut maiores illo dignissimos sit?</p>
+    </div>
+</div>
+
+<nav>
+    <ul>
+        <li> <i class="fas fa-home"></i> Home</li>
+        <li> <i class="fas fa-user-alt"></i> About</li>
+        <li> <i class="fas fa-envelope"></i> Contact</li>
+    </ul>
+</nav>
+
+<script>
+
+const open = document.getElementById('open')
+const close = document.getElementById('close')
+const container = document.querySelector('.container')
+
+open.addEventListener('click',()=>{
+    container.classList.add('show-nav')
+})
+close.addEventListener('click',()=>{
+    container.classList.remove('show-nav')
+})
+
+</script>
+
+</body>
+</html>
