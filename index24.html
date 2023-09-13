@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<p id="txt"></p>
+
+    <script>
+// sync blocking code
+// let p = document.querySelector('#txt')
+// p.textContent = 'MY PARA TAG'
+// alert('ON')
+// p.style.color='blue'
+// p.style.fontSize='50px'
+
+//Aync blocking code
+// let p = document.querySelector('#txt')
+// p.textContent = 'MY PARA TAG'
+// setTimeout(() => {
+//     alert('ON')
+// }, 2000);
+// p.style.color='blue'
+// p.style.fontSize='50px'
+
+// AJAX = Async JS XML = req---> server
+
+
+let request = new XMLHttpRequest()
+// console.log(typeof(request));
+
+request.open('GET','https://restcountries.com/v3.1/name/nepal'
+)
+request.send()// sendind my request
+
+request.addEventListener('load',function(){
+ let data = JSON.parse(this.responseText)
+ console.log(data);
+
+})
+
+
+
+    </script>
+    
+</body>
+</html>
