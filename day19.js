@@ -1,29 +1,29 @@
-// // let p1 = new Promise((resolve,reject)=>{
-// //     setTimeout(() => {
-// //         resolve('FIRST');
-// //         // reject('ERROR IN One')
-// //     }, 3000);
-// // })
+// let p1 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve('FIRST');
+//         // reject('ERROR IN One')
+//     }, 3000);
+// })
 
-// // let p2 = new Promise((resolve,reject)=>{
-// //     setTimeout(() => {
-// //         // resolve('Second');
-// //         reject('ERROR IN TWO')
-// //     }, 2000);
-// // })
+// let p2 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         // resolve('Second');
+//         reject('ERROR IN TWO')
+//     }, 2000);
+// })
 
-// // let p3 = new Promise((resolve,reject)=>{
-// //     setTimeout(() => {
-// //         // resolve('Third');
-// //         reject('Error in Three')
-// //     }, 1000);
-// // })
+// let p3 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         // resolve('Third');
+//         reject('Error in Three')
+//     }, 1000);
+// })
 
-// // // let a = Promise.all([p1,p2,p3])
-// // // let a = Promise.allSettled([p1,p2,p3])
-// // // let a = Promise.race([p1,p2,p3])
-// // let a = Promise.any([p1,p2,p3])
-// // a.then(data=>console.log(data))
+// // let a = Promise.all([p1,p2,p3])
+// // let a = Promise.allSettled([p1,p2,p3])
+// // let a = Promise.race([p1,p2,p3])
+// let a = Promise.any([p1,p2,p3])
+// a.then(data=>console.log(data))
 
 // //Async Await
 

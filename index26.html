@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="main"></div>
+
+<script>
+
+let getCountry = (country)=>{
+
+let request = new XMLHttpRequest()
+request.open('GET',`https://restcountries.com/v3.1/name/${country}`)
+request.send()
+
+request.addEventListener('load',function(){
+    let data = JSON.parse(this.responseText)
+    console.log(data);
+
+let curr = data[0].currencies
+console.log(curr);
+let currData = Object.values(curr)
+console.log(currData);
+
+let html = `
+<div>
+    <img src=${data[0]?.flags?.png} alt=${data[0]?.flags.alt}/>
+    <h1>Country Name ${data[0]?.name?.official} </h1>
+    <p>Currency = ${currData[0]?.symbol} ${currData[0]?.name}</p>
+    <p>Language</p>
+    <p>Population ${data[0]?.population}</p>
+    </div>
+`
+let main = document.getElementById('main')
+main.insertAdjacentHTML('beforeend',html)
+})
+}
+
+getCountry('pakistan')
+// getCountry('germany')
+
+</script>
+
+</body>
+</html>

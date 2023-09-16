@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(180px,450px));
+
+        }
+        #main>section{
+            border: 5px solid red;
+            background-image: linear-gradient(red,aqua,green);
+            color: white;
+            text-align: center;
+            margin: 20px;
+            /* width: 30%; */
+        }
+    </style>
+</head>
+<body>
+    
+<div id="main"></div>
+
+<script>
+
+
+
+
+//     let a = {
+//         name:'Kalpana',age:67,profession:"Singer",
+//         favCuisine:{
+//             breakfast:['Tea','Waffel'],
+//             lunch:'Rice and Rajma',dinner:'Sandwich'
+//         }
+//     }
+//     console.log(a);
+
+// // console.log( a.favoriteCuisine?.lunch  );
+
+// // let {name,age} = a
+// // console.log( name );
+
+// console.log( Object.keys(a) );
+// console.log( Object.values(a) );
+
+
+//Promises
+
+// const a = new Promise((resolve,reject)=>{
+//     const b= true
+//     if(b){
+//         resolve('IT SRESOLVED')
+//     }else{
+//         reject('Its REJECTED')
+//     }
+// })
+// console.log(a);
+
+// //consume a promise
+// a
+// .then(value=>{
+
+// console.log('a Returns a promise');
+// const c = new Promise((resolve,reject)=>{
+//     resolve('SECOND PRMS')
+// })
+// return c
+// })
+// .then(value=>{
+//     console.log('FOR SECOND PROMISE');
+//     console.log(value)
+// })
+// .catch(err=>console.log(err))
+
+// let p1 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         // resolve('FIRST');
+//         reject('ERROR IN One')
+//     }, 5000);
+// })
+
+// let p2 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         // resolve('Second');
+//         reject('ERROR IN TWO')
+//     }, 2000);
+// })
+
+// let p3 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         // resolve('Third');
+//         reject('Error in Three')
+//     }, 1000);
+// })
+
+// // let a = Promise.all([p1,p2,p3])
+// // let a = Promise.allSettled([p1,p2,p3])
+// // let a = Promise.race([p1,p2,p3])
+// // let a = Promise.any([p1,p2,p3])
+// a.then(data=>console.log(data))
+
+//XMLHTTPREQUEST uses callback 
+// FETCH API , (browser api)
+
+// 
+// let p1 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve('FIRST');
+//         // reject('ERROR IN One')
+//     }, 5000);
+// })
+
+// let p2 = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         resolve('Second');
+//         // reject('ERROR IN TWO')
+//     }, 1000);
+// })
+
+
+// async function one(){
+//     console.log('One in invoked');
+//     let a = await p1
+//     console.log('p1 is consumed');
+//     let b = await p2
+//     console.log('P2 is consumed');
+//     return [a,b]
+// }
+// console.log(one());
+
+// function one(){
+//     return [p1,p2]
+// }
+// console.log(one());
+
+// let a = fetch('https://jsonplaceholder.typicode.com/posts')
+// console.log(a);
+// a
+// .then(value=>value.json())
+// .then(data=>console.log(data))
+
+
+// async function b(){
+// try {
+//     let a = await fetch('https://jsonplaceholder.typicode.com/posts')
+//     let b = await a.json()
+//     return b
+// } catch (error) {
+//     console.log(error);
+// }
+// }
+
+// b()
+// .then(data=>console.log(data))
+
+//exercise
+
+// function output(data){
+//     let html = `
+// <section>
+//     <h1>${data.id}</h1>
+//     <h1>Title says =  ${data.title}</h1>
+//     <h2> Body says = ${data.body}</h2>
+//     </section>
+// `
+// return html
+// }
+
+// let datas = fetch('https://jsonplaceholder.typicode.com/posts')
+// datas.then(val=>val.json())  
+// .then(data=>{
+//     console.log(data)
+// for(let i =0;i<data.length;i++){
+//     let sendData = data[i]
+//    let frontEnd =  output( sendData )
+// //    console.log(front);
+//    let main = document.getElementById('main')
+// main.insertAdjacentHTML('beforeend',frontEnd)
+// }
+// })
+
+
+function output(data){
+    let html = `
+<section>
+    <h1>${data.id}</h1>
+    <h1>Title says =  ${data.title}</h1>
+    <h2> Body says = ${data.body}</h2>
+    </section>
+`
+return html
+}
+
+async function two(){
+
+try {
+    let d = await fetch('https://jsonplaceholder.typicode.com/posts')
+
+let a = await d.json()  
+let b = await a
+console.log(a);
+for(let i =0;i<b.length;i++){
+    let sendData = b[i]
+   let frontEnd =  output( sendData )
+//    console.log(front);
+   let main = document.getElementById('main')
+main.insertAdjacentHTML('beforeend',frontEnd)
+}
+} catch (error) {
+    console.log(error);
+}
+
+}
+
+
+
+two()
+
+
+</script>
+
+</body>
+</html>
