@@ -1,49 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-<div id="main"></div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container{
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-content: space-between;
+      }
+      #main {
+        width: 120%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+      }
+      #main > div {
+        margin: 20px;
+        border: 5px solid blue;
+        width: 25%;
+        height: 530px;
+        border-radius: 15px;
+        box-shadow: 10px 10px 8px 4px black;
+        text-align: center;
+        line-height: 40px;
+        background-color: black;
+        color: yellow;
+      }
+      /* #main>div>img */
+      #main img {
+        height: 180px;
+        width: 100%;
+        border-radius: 15px;
+      }
+      .title {
+        font-size: 18px;
+        font-family: sans-serif;
+        color: aqua;
+      }
+      #main > div > h1:first-child {
+        color: palevioletred;
+      }
+      /* neighbours */
 
-<script>
+      #neighbours {
+        width: 120%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+      }
+      #neighbours > div {
+        margin: 20px;
+        border: 5px solid blue;
+        width: 25%;
+        height: 530px;
+        border-radius: 15px;
+        box-shadow: 10px 10px 8px 4px black;
+        text-align: center;
+        line-height: 40px;
+        background-color: black;
+        color: yellow;
+      }
+      /* #main>div>img */
+      #neighbours img {
+        height: 180px;
+        width: 100%;
+        border-radius: 15px;
+      }
+      .title {
+        font-size: 18px;
+        font-family: sans-serif;
+        color: aqua;
+      }
+      #neighbours > div > h1:first-child {
+        color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="inp" />
+    <button onclick="getData()">SUMBIT</button>
 
-let getCountry = (country)=>{
-
-let request = new XMLHttpRequest()
-request.open('GET',`https://restcountries.com/v3.1/name/${country}`)
-request.send()
-
-request.addEventListener('load',function(){
-    let data = JSON.parse(this.responseText)
-    console.log(data);
-
-let curr = data[0].currencies
-console.log(curr);
-let currData = Object.values(curr)
-console.log(currData);
-
-let html = `
-<div>
-    <img src=${data[0]?.flags?.png} alt=${data[0]?.flags.alt}/>
-    <h1>Country Name ${data[0]?.name?.official} </h1>
-    <p>Currency = ${currData[0]?.symbol} ${currData[0]?.name}</p>
-    <p>Language</p>
-    <p>Population ${data[0]?.population}</p>
+    <div class="container">
+      <div id="main"></div>
+      <div id="neighbours"></div>
     </div>
-`
-let main = document.getElementById('main')
-main.insertAdjacentHTML('beforeend',html)
+
+    <script>
+      // onclick
+      function getData() {
+        let inp = document.querySelector("#inp");
+        console.log(inp.value);
+        getCountry(inp.value);
+      }
+
+      // for country card
+      function renderCountry(data) {
+        for (let i = 0; i < data.length; i++) {
+          // currency
+          let currData = Object.values(data[i].currencies);
+          // console.log(currData);
+
+          // language
+          let lang = Object.values(data[i]?.languages).join(" ");
+          console.log(lang);
+
+          let html = `
+<div>
+    <h1>COUNTRY DATA</h1>
+    <img src=${data[i]?.flags?.png} alt=${data[i]?.flags.alt}/>
+    <h1 class='title'>Country Name ${data[i]?.name?.official} </h1>
+    <p>Currency = ${currData[0]?.symbol} ${currData[0]?.name}</p>
+    <p>Language = ${lang}</p>
+    <p>Population =  ${data[i]?.population}</p>
+    </div>
+`;
+          let main = document.getElementById("main");
+          main.insertAdjacentHTML("beforeend", html);
+        }
+      }
+
+      // render Neighbours
+      function renderNeighbour(data) {
+        console.log(data);
+        for (let i = 0; i < data.length; i++) {
+          // currency
+          let currData = Object.values(data[i].currencies);
+          // console.log(currData);
+
+          // language
+          let lang = Object.values(data[i]?.languages).join(" ");
+          console.log(lang);
+
+          let html = `
+<div>
+    <h1>Neighbour DATA</h1>
+    <img src=${data[i]?.flags?.png} alt=${data[i]?.flags.alt}/>
+    <h1 class='title'>Country Name ${data[i]?.name?.official} </h1>
+    <p>Currency = ${currData[0]?.symbol} ${currData[0]?.name}</p>
+    <p>Language = ${lang}</p>
+    <p>Population =  ${data[i]?.population}</p>
+    </div>
+`;
+          let n = document.getElementById("neighbours");
+          n.insertAdjacentHTML("beforeend", html);
+        }
+      }
+
+      // country data  using callback
+//       function getCountry(country) {
+//         // DATA 1
+//         let request = new XMLHttpRequest();
+//         request.open("GET", `https://restcountries.com/v3.1/name/${country}`);
+//         request.send();
+
+//         request.addEventListener("load", function () {
+//           let data = JSON.parse(this.responseText);
+//           console.log(data);
+//           //get country card
+//           renderCountry(data);
+//           // DATA 2
+//           let neighbourData = data[0].borders[0];
+//           console.log(neighbourData);
+
+//           const request2 = new XMLHttpRequest();
+//           request2.open(
+//             "GET",
+//             `https://restcountries.com/v3.1/alpha/${neighbourData}
+// `
+//           );
+//           request2.send();
+
+//           request2.addEventListener("load", function () {
+//             let neighbour = JSON.parse(this.responseText);
+//             console.log(neighbour);
+//             renderNeighbour(neighbour);
+//           });
+//         });
+//       }
+
+// using fetchapi 
+
+function getCountry(country) {
+        // DATA 1
+ fetch(`https://restcountries.com/v3.1/name/${country}`)
+ .then(val=>{
+    let data = val.json()
+    return data
+ })
+ .then(count=>{
+    console.log(count);
+    renderCountry(count);
+    let neighbour = count[0].borders?.[0]
+    console.log(neighbour);
+let data2 = fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`)
+.then(a=>{
+    let b = a.json()
+    return b
 })
-}
+.then(neighbourData=>{
+    console.log(neighbourData);
+    renderNeighbour(neighbourData)
+})
+ })
 
-getCountry('pakistan')
-// getCountry('germany')
+      
+      }
 
-</script>
 
-</body>
+      // countrydata-->bordersdata-->showCard
+    </script>
+  </body>
 </html>

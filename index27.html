@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<button id="btn">CLICK</button>
+
+<h1 id="txt"></h1>
+
+<script>
+    let btn = document.querySelector('#btn')
+
+    btn.addEventListener('click',one)
+
+function one(){
+    console.log('BTN CLICKED');
+    // initiating the xhr obj
+    let xhr = new XMLHttpRequest()
+// open the obj
+xhr.open('GET','https://jsonplaceholder.typicode.com/posts')
+
+let txt = document.getElementById('txt')
+//ONPROGRESS
+
+xhr.onprogress=function(){
+    console.log('ON PROGRESS');
+  txt.innerHTML='Loading.....'
+}
+//what to do when response is ready
+
+xhr.onload=function(){
+    alert('RESPONSE IS READY')
+let data = JSON.parse(this.responseText)
+    txt.innerText='DATA is READY'
+    
+let a = data.map(ele=>ele.title)
+console.log(a);
+
+}
+// request will be sent
+xhr.send()
+
+
+
+
+}
+
+
+
+</script>
+
+</body>
+</html>
