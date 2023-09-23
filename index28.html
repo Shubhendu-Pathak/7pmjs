@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // class
+        // const Person = function(firstname,birthyear){
+        // this.firstname = firstname
+        // this.birthyear = birthyear
+        // }
+
+        // //instance
+        // const jake = new Person('Jake Lively',2001)
+        // console.log(jake);
+        // console.log( jake instanceof Person );
+
+        // const mary = new Person('Mary James',2010)
+        // console.log(mary);
+        // console.log( mary instanceof Person );
+
+        // //Prototypes
+        // console.log(Person.prototype);
+
+        // Person.prototype.calcAge=function(){
+        //     console.log(`The age of ${this.firstname} is ${2023-this.birthyear}`);
+        // }
+
+        // Person.prototype.species = 'Homo Sapiens'
+
+        // jake.calcAge()
+        // mary.calcAge()
+
+        // console.log( jake.__proto__ === Person.prototype);
+
+        //Exercise
+
+        // const Car = function(make,speed){
+        //     this.make=make
+        //     this.speed = speed
+        // } 
+        // Car.prototype.accelerate=function(){
+        //     this.speed += 10
+        //     console.log(`${this.make} is going at ${this .speed} km/hr`);
+        // }
+
+        // Car.prototype.decelerate=function(){
+        //     this.speed -= 10
+        //     console.log(`${this.make} is going at ${this .speed} km/hr`);
+        // }
+
+        // const audi = new Car('AUDI',40)
+        // console.log(audi);
+        // const bmw = new Car('BMW',100)
+        // console.log(bmw);
+
+        // audi.accelerate()
+        // audi.accelerate()
+        // audi.accelerate()
+        // audi.decelerate()
+        // audi.decelerate()
+
+        // bmw.accelerate()
+        // bmw.accelerate()
+        // bmw.accelerate()
+        // bmw.decelerate()
+
+        //Inheritance between class
+//         const Person = function (firstname, birthyear) {
+//             this.firstname = firstname
+//             this.birthyear = birthyear
+//         }
+//         Person.prototype.calcAge = function () {
+//             console.log(2023 - this.birthyear);
+//         }
+
+//         const Student = function (firstname, birthyear, course) {
+//             // this.firstname = firstname
+//             // this.birthyear = birthyear
+
+//             Person.call(this, firstname, birthyear)
+//             this.course = course
+//         }
+// // Linking Protoype
+//         Student.prototype = Object.create(Person.prototype)
+
+//         Student.prototype.introduce = function () {
+//             console.log(`My name is ${this.firstname} and iam studying ${this.course}`);
+//         }
+
+//         const mike = new Student('Mike', 2003, 'WEB-DEV')
+//         console.log(mike);
+//         mike.introduce()
+
+
+//         // mike.calcAge()
+
+
+//         console.log(Person.prototype);
+//         console.log(Student.prototype);
+//         console.log(mike.__proto__);
+
+
+    </script>
+
+</body>
+
+</html>

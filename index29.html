@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        table{
+            margin-top: 50px;
+            width: 100vw;
+            border: 3px solid blue;
+            border-spacing: 20px;
+        }
+        th{
+            /* border-bottom: 5px solid  ; */
+        }
+        td{
+            /* border: 2px solid ; */
+            text-align: center;
+        }
+        .succes,.error{
+            color: wheat;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+        }
+        .succes{
+            background-color: green;
+        }
+        .error{
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Book List</h1>
+    <hr>
+
+    <div class="container">
+        <form id="book-form">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" name="" id="title">
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" name="" id="author">
+            </div>
+            <div>
+                <label for="isbn">ISBN</label>
+                <input type="text" name="" id="isbn">
+            </div>
+            <div>
+                <input type="submit" value="SUBMIT">
+            </div>
+        </form>
+        <hr>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>TITLE</th>
+                    <th>AUTHOR</th>
+                    <th>ISBN</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <hr>
+            <tbody id="book-list">
+              <!-- <tr>
+                <td>TITLE</th>
+                <td>AUTHOR</th>
+                <td>ISBN</th>
+                <td>X</td>
+              </tr> -->
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+
+//books construtor
+
+function Book(title,author,isbn){
+    this.title=title
+    this.author=author
+    this.isbn=isbn
+}
+
+//UI constructor
+
+function UI(){}
+
+UI.prototype.addBookList = function(book){
+const list  = document.getElementById('book-list')
+//Create tr
+const row = document.createElement('tr')
+//insert cols
+row.innerHTML =`
+<td>${book.title}</td>
+<td>${book.author}</td>
+<td>${book.isbn}</td>
+<td><a href="#" class="delete">X</a></td>
+`
+list.appendChild(row)
+}
+
+//Event Listeners
+
+document.getElementById('book-form').addEventListener('submit',function(e){
+    e.preventDefault()// to stop default refreshing
+const title = document.getElementById('title').value
+const author = document.getElementById('author').value
+const isbn = document.getElementById('isbn').value
+
+console.log(title,author,isbn);
+
+//Instantiate Book
+const book = new Book(title,author,isbn)
+// console.log(book);
+
+//Instantiat UI
+const ui = new UI()
+console.log(ui);
+
+//ADD BOOK LIST
+ui.addBookList(book)
+
+})
+
+    </script>
+</body>
+
+</html>
