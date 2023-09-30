@@ -1,3 +1,9 @@
+closure hoisting currying block scope
+dom -> revision
+Ajax --> react [5]  (api call) 
+
+
+
 A new Txt File
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eros velit, egestas nec tortor nec, tristique volutpat velit. Etiam accumsan ipsum a dui commodo, quis pharetra nisl elementum. Donec scelerisque quis mi quis egestas. Praesent ornare ultricies odio vitae commodo. Morbi commodo semper velit, non consequat purus gravida sit amet. Mauris id massa eu metus vestibulum aliquam. Donec nec quam id mauris efficitur egestas quis id nisi. Praesent urna lectus, dictum quis pharetra sed, faucibus sit amet est. Praesent tempor est vel est venenatis, eget maximus nulla laoreet. Integer viverra purus nisi.
 

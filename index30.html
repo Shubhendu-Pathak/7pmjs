@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .two{
+            background-color: rgb(15, 236, 66);
+            height: 200px;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .one{
+            background-color: pink;
+            height: 200px;
+            width: 60%;
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="two">
+    <div class="one">
+        <button class="btn1">CLICK</button>
+    </div>
+</div>
+    
+<script>
+// React JS library 
+
+    // exeuction-context, scope chain, closures, block scope, event loop, memoization, debouncing ,throttling  
+
+    //IIFE
+    // (
+    // function(){
+    //     console.log('IIFE');
+    // }
+    // ()
+    // )
+
+    // setTimeout(() => {
+        
+    // }, timeout);
+
+//Currying
+
+// function sum(x){
+// return function(y){
+//     return function(z){
+//         return `CAR ${x+y+z}`
+//     }
+   
+// }
+// }
+
+// let a = sum(10)
+// console.log( a );
+// let b = a(99)
+// console.log( b );
+// let c = b(20)
+// console.log(c);
+
+// console.log('*******************');
+// //currying
+// let d = sum(99)(10)(20)
+// console.log(d);
+
+//Ex 2
+// let a = {
+//     name:'Jay',age:34
+// }
+// console.log( a.age );
+// console.log(a['age']);
+
+
+// function one(x){
+//     return function(y){
+//         return x[y]/// a['age']
+//     }
+// }
+
+// let ans = one(a)
+// console.log(ans);
+
+// let final = ans('age')
+// console.log(final);
+
+// ///using curring
+// console.log( one(a)('age') );
+
+//stopImmediatePropagation
+
+// let div2= document.querySelector('.two')
+// div2.addEventListener('click',function(){
+//     console.log('DIV 2 CLICKED');
+// })
+
+// let div = document.querySelector('.one')
+// div.addEventListener('click',function(){
+//     console.log('DIV 1 IS CLICKED');
+// })
+
+// let btn = document.querySelector('.btn1')
+
+// btn.addEventListener('click',function(){
+// console.log('BUTTON1 CLICKED');
+// })
+// btn.addEventListener('click',function(event){
+//     event.stopImmediatePropagation()
+// console.log('BUTTON1 CLICKED Twice');
+// })
+
+//Event bubbling; stop propagation,
+
+// //child to parent = Bubbling
+
+// let div2= document.querySelector('.two')
+// div2.addEventListener('click',function(){
+//     console.log('DIV 2 CLICKED');
+// })
+
+// let div = document.querySelector('.one')
+// div.addEventListener('click',function(){
+//     console.log('DIV 1 IS CLICKED');
+// })
+
+
+// let btn = document.querySelector('.btn1')
+// btn.addEventListener('click',function(){
+// console.log('BUTTON1 CLICKED');
+// })
+
+
+//parent to child = capturing
+
+// let div2= document.querySelector('.two')
+// div2.addEventListener('click',function(){
+//     console.log('DIV 2 CLICKED');
+// },true)
+
+// let div = document.querySelector('.one')
+// div.addEventListener('click',function(){
+//     console.log('DIV 1 IS CLICKED');
+// },true)
+
+
+// let btn = document.querySelector('.btn1')
+// btn.addEventListener('click',function(){
+// console.log('BUTTON1 CLICKED');
+// },true)
+
+//Stop Propagation
+
+// let div2= document.querySelector('.two')
+// div2.addEventListener('click',function(){
+//     console.log('DIV 2 CLICKED');
+// })
+
+// let div = document.querySelector('.one')
+// div.addEventListener('click',function(){
+//     console.log('DIV 1 IS CLICKED');
+// })
+
+
+// let btn = document.querySelector('.btn1')
+// btn.addEventListener('click',function(event){
+//     event.stopPropagation()
+// console.log('BUTTON1 CLICKED');
+// })
+
+
+
+// Hoisting, Temporal Dead Zone
+
+// console.log(a);
+
+// var a = 10
+
+
+
+// {
+
+//     // console.log(b);///tDZ zone
+//     //tDZ zone
+//     //tDZ zone
+//     //tDZ zone
+//     //tDZ zone
+// let b = 'fish'////tDZ zone ends
+// //tDZ zone ends
+// //tDZ zone ends
+// //tDZ zone ends
+// console.log(b);
+
+// }
+
+// one()
+
+// function one(){
+//     console.log('ONE');
+// }
+
+// air()
+// var air = function(){
+//     console.log('a');
+// }
+
+
+
+    // air()//TDZ exists
+//TDZ exists
+//TDZ exists
+//TDZ exists
+// let air = function(){ //TDZ ends
+//     console.log('a');
+// }
+//TDZ ends
+//TDZ ends
+//TDZ ends
+// air()
+
+
+</script>
+
+</body>
+</html>
