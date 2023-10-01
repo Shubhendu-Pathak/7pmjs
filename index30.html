@@ -49,6 +49,8 @@
         
     // }, timeout);
 
+    //
+
 //Currying
 
 // function sum(x){
@@ -94,6 +96,17 @@
 
 // ///using curring
 // console.log( one(a)('age') );
+
+//Infinte Currying 
+
+function add(w){/// first = 4 second = 9 third = = 15
+    return function(x){// first = 5 second = 6  third = = 7
+        if( x ) return add( w+x )// first=add(9) second = add(15)  third = add(15+7 )
+        return w
+    }
+}
+
+console.log( add(4)(5)(6)() );
 
 //stopImmediatePropagation
 

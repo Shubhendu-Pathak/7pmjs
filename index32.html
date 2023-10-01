@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Throttling</h1>    
+<hr>
+
+<input type="text" name="" id="search" >
+<button id="btn" onclick="newFunc()">SUBMIT</button>
+
+<script>
+
+const mythrotttle = (cb,d)=>{
+    
+return function(...args){
+    document.querySelector('#btn').disabled= true
+    setTimeout(() => {
+        cb()
+    }, d);
+}
+}
+
+const newFunc = mythrotttle(()=>{
+    document.querySelector('#btn').disabled= false
+    console.log('DATA FETCHED');
+},5000)
+
+
+
+
+</script>
+
+
+</body>
+</html>

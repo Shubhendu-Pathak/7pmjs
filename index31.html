@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Debouncing</h1>    
+<hr>
+
+<input type="text" name="" id="search" onchange="DebouceFunc()">
+
+<script>
+let count = 0
+
+function getData(){
+    console.log('Fetching data '+ count++);
+}
+
+// debounce
+
+function mydebouce(call,d){
+let timer;
+return function(...args){
+    if(timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+        call()
+    }, d);
+}
+}
+
+const DebouceFunc = mydebouce(getData,2000)
+
+
+
+//  setTimeout(() => {
+//     console.log('WAIT FOR 2s');
+// }, 2000);
+
+
+
+// let f = function(){
+//     console.log('Wait for 3s');
+// }
+// f()
+
+// clearTimeout( setTimeout( f,3000 ) )
+
+</script>
+
+
+</body>
+</html>
